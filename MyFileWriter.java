@@ -46,5 +46,34 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        createHiddenPassword();
+        createClassified();
+
+    }
+
+    public static void createHiddenPassword()
+    {
+        
+        try (BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter(".hiddenPassword.txt")))
+        {
+            bufferedWriter2.write("password");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createClassified()
+    {
+        try (BufferedWriter bufferedWriter3 = new BufferedWriter(new FileWriter("\\\\wsl.localhost\\Ubuntu-20.04\\home\\FileWriterActivity\\.classified\\confidential.dat")))
+        {
+            bufferedWriter3.write("TOPSECRET");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
