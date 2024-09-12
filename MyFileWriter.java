@@ -78,6 +78,8 @@ public class MyFileWriter {
         }
     }
 
+
+    //printFileSize - prints the length of the contents of the file specified in filename
     public static void printFileSize(String filename)
     {
         //implement my print filesize
