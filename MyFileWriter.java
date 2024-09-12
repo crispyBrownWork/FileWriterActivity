@@ -49,6 +49,7 @@ public class MyFileWriter {
 
         createHiddenPassword();
         createClassified();
+        printFileSize("example.txt");
 
     }
 
@@ -80,6 +81,8 @@ public class MyFileWriter {
     public static void printFileSize(String filename)
     {
         //implement my print filesize
-        
+        File sizeChecker = new File(filename);
+        long fileSize = sizeChecker.length();
+        System.out.println(fileSize);
     }
 }
