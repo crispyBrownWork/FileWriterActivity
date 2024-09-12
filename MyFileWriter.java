@@ -46,5 +46,45 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        createHiddenPassword();
+        createClassified();
+        printFileSize("example.txt");
+
+    }
+
+    public static void createHiddenPassword()
+    {
+        
+        try (BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter(".hiddenPassword.txt")))
+        {
+            bufferedWriter2.write("password");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createClassified()
+    {
+        try (BufferedWriter bufferedWriter3 = new BufferedWriter(new FileWriter("\\\\wsl.localhost\\Ubuntu-20.04\\home\\FileWriterActivity\\.classified\\confidential.dat")))
+        {
+            bufferedWriter3.write("TOPSECRET");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+
+    //printFileSize - prints the length of the contents of the file specified in filename
+    public static void printFileSize(String filename)
+    {
+        //implement my print filesize
+        File sizeChecker = new File(filename);
+        long fileSize = sizeChecker.length();
+        System.out.println(fileSize);
     }
 }
